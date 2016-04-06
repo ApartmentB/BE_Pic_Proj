@@ -12,5 +12,4 @@ class LoginsController < ApplicationController
       render json: { :message "Email or password could not be found"}
           status :unauthorized
   end
-
 end

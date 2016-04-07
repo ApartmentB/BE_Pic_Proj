@@ -4,5 +4,7 @@ class RegistrationsController < ApplicationController
 										 full_name: params["full_name"],
 										 email: params["email"],
 										 password: params["password"])
+
+      #save
   end
 end

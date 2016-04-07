@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
 										 password_confirmation: params["password"])
 		@user.ensure_auth_token
     if @user.save
-      render json: { user: @user.as_json(only: [:user_name, :full_name, :email, :password_digest]) },
+      render json: { user: @user.as_json(only: [:user_name, :full_name, :email, :auth_token]) },
              status: :created
     else
       render json: { errors: @user.errors.full_messages },

@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
 
 
   def ensure_auth_token
+    binding.pry
     unless self.auth_token
       self.auth_token = User.generate_token
     end

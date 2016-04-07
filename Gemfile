@@ -6,6 +6,8 @@ ruby '2.3.0'
 gem 'rails', '4.2.6'
 # # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
+#cors is cool
+gem "rack-cors", require: "rack/cores"
 # Use Postgres as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

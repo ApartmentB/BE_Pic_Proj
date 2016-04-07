@@ -57,4 +57,4 @@ group :production do
 	gem 'rails_12factor'
 end
 
-gem “rack-cors”, require: “rack/cors”
+gem 'rack-cors', require: 'rack/cors'

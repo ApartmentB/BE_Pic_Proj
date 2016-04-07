@@ -63,8 +63,8 @@ Params:
 Request:
 
 {
-  "first": "Slippy",
-  "last": "McHappy",
+  "user_name`": "Slippy",
+  "full_name": "Slippy McHappy",
   "email": "slippy@aol.com",
   "password": "happy"
 }
@@ -73,8 +73,8 @@ Response:
 
 {
   "user": {
-    "first_name": "Slippy",
-    "last_name": "McHappy",
+    "user_name": "slippy",
+    "full_name": "slippy mchappy",
     "email": "slippy@aol.com",
     "auth_token": "7774743beeb3c26dfdd80213ba1b9097"
   }

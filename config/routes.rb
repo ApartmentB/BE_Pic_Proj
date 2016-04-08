@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   post "login", to: "logins#create", as: "login"
 
-  post "posts", to: "posts#create", as: "post"
+  post "post", to: "posts#create", as: "post"
 
 
   # You can have the root of your site routed with "root"

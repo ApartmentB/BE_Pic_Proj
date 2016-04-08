@@ -1,4 +1,7 @@
 class Post < ActiveRecord::Base
+  belongs_to :user
+  has_many :guesses
+  
   has_attached_file :image
 
   has_attached_file :image

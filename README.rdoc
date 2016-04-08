@@ -53,6 +53,8 @@ POST /signups
 
 This route is present for the signup of new users.
 
+Registration:
+==============
 Params:
 
    user_name: string
@@ -76,6 +78,31 @@ Response:
     "user_name": "slippy",
     "full_name": "slippy mchappy",
     "email": "slippy@aol.com",
+    "auth_token": "7774743beeb3c26dfdd80213ba1b9097"
+  }
+}
+
+Login:
+===========
+
+Params:
+
+   user_name: string
+   password: string
+   auth_token: string
+
+Request:
+
+{
+  "user_name": "Slippy",
+  "password": "happy"
+}
+
+Response:
+
+{
+  "user": {
+    "user_name": "slippy",
     "auth_token": "7774743beeb3c26dfdd80213ba1b9097"
   }
 }

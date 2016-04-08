@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
 
   def self.generate_token
     token = SecureRandom.hex
-    while User.exists?(auth_token: token)
+    while User.exists?(auth_token: token)#making sure no duplicates
       token = SecureRandom.hex
     end
     token

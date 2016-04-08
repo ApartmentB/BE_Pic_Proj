@@ -1,6 +1,7 @@
 class LoginsController < ApplicationController
 
   def create
+
     @user = User.find_by!(user_name: params["user_name"])#getting from fe
     if @user.authenticate(params["password"])
 

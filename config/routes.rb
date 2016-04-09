@@ -7,7 +7,19 @@ Rails.application.routes.draw do
 
   post "login", to: "logins#create", as: "login"
 
-  post "post", to: "posts#create", as: "post"
+  get "post", to: "posts#index", as: "posts"
+  post "post", to: "posts#create"
+  #get "post/:id", to: "posts#show", as: "post"
+  delete "posts/:id", to: "posts#destroy"
+
+  # get "posts", to: "posts#index", as: "posts"
+  # get "posts/new", to: "posts#new", as: "new_posts"
+  # post "posts", to: "posts#create"
+  # get "posts/:id", to: "posts#show", as: "post" # POST SHOW ROUTE
+  # get "posts/:id/edit", to: "posts#edit", as: "edit_post"
+  # put "posts/:id", to: "posts#update"
+  # patch "posts/:id", to: "posts#update"
+  # delete "posts/:id", to: "posts#destroy"
 
 
   # You can have the root of your site routed with "root"

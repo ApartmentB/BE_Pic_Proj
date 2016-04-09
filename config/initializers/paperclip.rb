@@ -7,7 +7,7 @@ options = {
   },
   #  path: "/:class/:attachment/:id_partition/:style/:filename", #customize way url looks?
   #  url: ":s3_domain_url",
-  s3_host_name: 'http://hintpic.s3-website-us-east-1.amazonaws.com'
+  #s3_host_name: 'http://hintpic.s3-website-us-east-1.amazonaws.com'
 }
 
 options.each do |key, value|

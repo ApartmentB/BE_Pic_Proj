@@ -1,3 +1,5 @@
-json.user @post.user, :user_name, :email
-json.image_url @post.image.url
+json.post do
+	json.username @post.user.user_name
+	json.extract! @post, :caption, :solved, :image
+end
 # json.category @post.category

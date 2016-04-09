@@ -107,6 +107,37 @@ Response:
   }
 }
 
+Post
+===========
+URL: https://tranquil-garden-21235.herokuapp.com/post
+
+Params:
+
+   user_name: slippy
+   image: file
+   caption: string
+   solved: boolean
+   auth_token: string
+
+Request:
+
+{
+  "user_name": "Slippy",
+  "solved": "false"
+  "image": "file.jpg"
+}
+
+Response:
+
+{
+  "post": {
+    "user_name": "slippy",
+    "caption": "pizza",
+    "solved": "false",
+    "image": "pizza.jpg"
+    "auth_token": "7774743beeb3c26dfdd80213ba1b9097"
+  }
+}
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

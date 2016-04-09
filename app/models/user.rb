@@ -2,11 +2,17 @@ class User < ActiveRecord::Base
  has_many :posts
  has_secure_password
 
-  validates :full_name, :user_name, presence: true, uniqueness: true,
+  validates :user_name, presence: true, uniqueness: true,
     format: {
       with: /\A\S{4,8}\z/,
       message: "must be between 4-8 characters"
     }
+
+    validates :full_name, presence: true,
+      format: {
+        with: /\A\S{4,8}\z/,
+        message: "must be between 4-8 characters"
+      }
 
 
   validates :email, presence: true, uniqueness: true,

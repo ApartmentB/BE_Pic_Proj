@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   post "login", to: "logins#create", as: "login"
 
-  get "posts", to: "posts#index", as: "posts"
-  post "posts", to: "posts#create"
   get "posts/:id", to: "posts#show", as: "post"
   delete "posts/:id", to: "posts#destroy"
+  post "posts", to: "posts#create", as: "posts"
+
 
   # get "posts", to: "posts#index", as: "posts"
   # get "posts/new", to: "posts#new", as: "new_posts"

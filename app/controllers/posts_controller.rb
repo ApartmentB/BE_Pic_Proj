@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate!, only: [:create]
+ before_action :authenticate!, only: [:create]
+ #before_action :authenticate!, except: [:index]
 
   def create
     @post = current_user.posts.create(image: params["file"],
@@ -21,4 +22,16 @@ class PostsController < ApplicationController
       render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+ # def destroy
+ #    @post = Post.find(params[:id])
+ #    if current_user.id == @post.user_id
+ #      @post.destroy
+ #      render plain: "Post deleted."
+ #      status: :accepted
+ #    else
+ #      render json: { error: "Unable to delete post."}
+ #      status: :unauthorized
+ #    end
+ #  end
 end

@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
      @posts = Post.all
+     #binding.pry
      render "index.json.jbuilder", status: :ok
   end
 
@@ -28,16 +29,16 @@ class PostsController < ApplicationController
     end
   end
 
- # def destroy
- #    @post = Post.find(params[:id])
- #    if current_user.id == @post.user_id
- #      @post.destroy
- #      render plain: "Post deleted."
- #      status: :accepted
- #    else
- #      render json: { error: "Unable to delete post."}
- #      status: :unauthorized
- #    end
- #  end
+ def destroy
+    @post = Post.find(id: params[:id])
+    if current_user.id == @post.user_id
+      @post.destroy
+      render plain: "Post deleted.",
+      status: :accepted
+    else
+      render json: { error: "Unable to delete post."},
+      status: :unauthorized
+    end
+  end
 
 end

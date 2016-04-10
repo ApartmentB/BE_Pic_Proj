@@ -2,6 +2,11 @@ class PostsController < ApplicationController
  before_action :authenticate!, only: [:create]
  #before_action :authenticate!, except: [:index]
 
+  def index
+      @posts = Post.all
+      render "index.json.jbuilder", status: :ok
+  end
+
   def create
     @post = current_user.posts.create(image: params["file"],
                                       caption: params["caption"],

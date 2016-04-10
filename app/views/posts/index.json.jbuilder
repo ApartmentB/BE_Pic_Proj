@@ -1,4 +1,5 @@
 json.user @posts do |post|
+  json.id post.id
   json.user_id post.user_id
   json.url post.image.url
   json.answer post.answer

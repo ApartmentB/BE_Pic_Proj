@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "posts/:id", to: "posts#show", as: "post"
   delete "posts/:id", to: "posts#destroy"
 
+  get "user", to: "users#index", as: "users"
+
   # get "posts", to: "posts#index", as: "posts"
   # get "posts/new", to: "posts#new", as: "new_posts"
   # post "posts", to: "posts#create"

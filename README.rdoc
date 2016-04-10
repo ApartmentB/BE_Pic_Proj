@@ -139,3 +139,22 @@ Response:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+
+Index:
+===========
+
+GET posts/index
+
+Response:
+
+{
+      "id": 29,
+      "user_id": "5",
+      "url": "http://s3.amazonaws.com/hintpic/posts/images/000/000/029/original/CcXMPVAWAAA9d9A.jpg?1460321487",
+      "answer": null,
+      "caption": "user1",
+      "solved": false,
+      "title": null
+}

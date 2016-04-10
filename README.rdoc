@@ -113,7 +113,7 @@ tranquil-garden-21235.herokuapp.com/posts
 
 Params:
 
-   user_name: string
+   image: string
    caption: string
    solved: boolean
 

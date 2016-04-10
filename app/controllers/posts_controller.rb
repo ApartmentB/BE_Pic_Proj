@@ -1,29 +1,6 @@
-# class PostsController < ApplicationController
-#   before_action :authenticate!, only: [:create]
-#
-#   def create
-#     #binding.pry
-#     @post = current_user.posts.create(image: params["image"], answer: params["answer"]) #category: params["category"],
-#     if @post.save
-#       render "create.json.jbuilder", status: :created#sends back 201
-#       # render json: {
-#       #          post: {
-#       #            user: @post.user,
-#       #            category: @post.category,
-#       #            image: @post.image.url,
-#       #            created_at: @post.created_at,
-#       #            updated_at: @post.updated_at
-#       #          }
-#       #        },
-#       #        status: :created
-#     else
-#       render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity#sends back 422
-#     end
-#   end
-# end
-
 class PostsController < ApplicationController
- before_action :authenticate!, only: [:create]
+ #before_action :authenticate!, only: [:create]
+ before_action :authenticate!, except: [:index]
 
   def index
   	@posts = Post.all
@@ -55,9 +32,11 @@ class PostsController < ApplicationController
  #    @post = Post.find(params[:id])
  #    if current_user.id == @post.user_id
  #      @post.destroy
+ #      render plain: "Post deleted."
+ #      status: :accepted
  #    else
- #      flash[:notice] = "You can only delete your posts."
+ #      render json: { error: "Unable to delete post."}
+ #      status: :unauthorized
  #    end
- #    redirect_to :root
  #  end
 end

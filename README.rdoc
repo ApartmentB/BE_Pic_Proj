@@ -142,8 +142,9 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 
-Index:
+Post Index:
 ===========
+tranquil-garden-21235.herokuapp.com/posts
 
 GET posts/index
 
@@ -157,4 +158,18 @@ Response:
       "caption": "user1",
       "solved": false,
       "title": null
+}
+
+User Index:
+===========
+tranquil-garden-21235.herokuapp.com/user
+
+GET user/index
+
+Response:
+
+{
+      "id": 1,
+      "user_name": "testperson",
+      "score": null
 }

@@ -30,8 +30,8 @@ class PostsController < ApplicationController
   end
 
  def destroy
-    @post = Post.find(id: params[:id])
-    if current_user.id == @post.user_id
+    @post = Post.find(params[:id])
+    if current_user.id == @post.user_id.to_i
       @post.destroy
       render plain: "Post deleted.",
       status: :accepted

@@ -107,6 +107,35 @@ Response:
   }
 }
 
+Post:
+===========
+tranquil-garden-21235.herokuapp.com/posts
+
+Params:
+
+   user_name: string
+   caption: string
+   solved: boolean
+
+Request:
+
+{
+  "image": "file",
+  "caption": "happy"
+  "solved": "false(default)"
+}
+
+Response:
+
+{
+  "post": {
+    "username": "joe",
+    "caption": "cool picture",
+    "solved": false,
+    "image": "http://s3.amazonaws.com/hintpic/posts/images/000/000/103/original/Screen_Shot_2016-04-09_at_8.40.53_PM.png?1460304852"
+  }
+}
+
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

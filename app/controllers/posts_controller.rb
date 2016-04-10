@@ -26,14 +26,4 @@ class PostsController < ApplicationController
      render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
    end
  end
-
- # def destroy
- #    @post = Post.find(params[:id])
- #    if current_user.id == @post.user_id
- #      @post.destroy
- #    else
- #      flash[:notice] = "You can only delete your posts."
- #    end
- #    redirect_to :root
- #  end
 end

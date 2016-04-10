@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post "login", to: "logins#create", as: "login"
 
   get "post", to: "posts#index", as: "posts"
-  post "posts", to: "posts#create"
+  post "posts", to: "posts#create", as: "posts_create"
   get "posts/:id", to: "posts#show", as: "post"
   delete "posts/:id", to: "posts#destroy"
 

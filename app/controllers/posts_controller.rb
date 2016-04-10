@@ -3,8 +3,8 @@ class PostsController < ApplicationController
  #before_action :authenticate!, except: [:index]
 
   def index
-      @posts = Post.all
-      render "index.json.jbuilder", status: :ok
+     @posts = Post.all
+     render "index.json.jbuilder", status: :ok
   end
 
   def create
@@ -39,4 +39,5 @@ class PostsController < ApplicationController
  #      status: :unauthorized
  #    end
  #  end
+
 end

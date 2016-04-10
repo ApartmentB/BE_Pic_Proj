@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-
   post "register", to: "registrations#create", as: "register"
 
   post "login", to: "logins#create", as: "login"

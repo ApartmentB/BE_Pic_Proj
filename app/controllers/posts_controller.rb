@@ -25,8 +25,13 @@
 class PostsController < ApplicationController
  before_action :authenticate!, only: [:create]
 
+  def index
+  	@posts = Post.all
+  	render "index.json.jbuilder", status: :ok
+  end
+
  def create
-   @post = current_user.posts.create(image: params["image"],
+   @post = current_user.posts.create(image: params["file"],
                                      caption: params["caption"],
                                      solved: params["solved"]) #category: params["category"],
    if @post.save
@@ -45,4 +50,14 @@ class PostsController < ApplicationController
      render json: { errors: @post.errors.full_messages }, status: :unprocessable_entity
    end
  end
+
+ # def destroy
+ #    @post = Post.find(params[:id])
+ #    if current_user.id == @post.user_id
+ #      @post.destroy
+ #    else
+ #      flash[:notice] = "You can only delete your posts."
+ #    end
+ #    redirect_to :root
+ #  end
 end

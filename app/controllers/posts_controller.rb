@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
       @posts = Post.all
+      binding.pry
       render "index.json.jbuilder", status: :ok
   end
 

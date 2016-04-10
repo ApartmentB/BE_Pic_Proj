@@ -2,7 +2,9 @@ class PostsController < ApplicationController
   before_action :authenticate!, only: [:create]
 
   def create
-    @post = current_user.posts.create(image: params["file"]) #category: params["category"],
+    @post = current_user.posts.create(image: params["file"],
+                                      caption: params["caption"],
+                                      solved: params["solved"]) #category: params["category"],
     if @post.save
       render "create.json.jbuilder", status: :created
       # render json: {

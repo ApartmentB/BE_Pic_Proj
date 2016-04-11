@@ -136,6 +136,29 @@ Response:
   }
 }
 
+delete:
+===========
+tranquil-garden-21235.herokuapp.com/posts/:id
+
+Params:
+
+   "id" = integer
+
+Request:
+
+{
+  "post.id": "1"
+}
+
+Response:
+
+{
+  "Post deleted."
+
+  or 
+
+  "Unable to delete post."
+}
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.

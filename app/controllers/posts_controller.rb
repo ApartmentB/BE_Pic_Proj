@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
- before_action :authenticate!, only: [:create]
- #before_action :authenticate!, except: [:index]
+ # before_action :authenticate!, only: [:create]
+ before_action :authenticate!, except: [:index]
 
   def index
-     @posts = Post.all
-     render "index.json.jbuilder", status: :ok
+      @posts = Post.all
+      binding.pry
+      render "index.json.jbuilder", status: :ok
   end
 
   def create
@@ -28,16 +29,27 @@ class PostsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    if current_user.id == @post.user_id.to_i
+      @post.destroy
+      render json: { message: "Post deleted." },
+=======
  def destroy
     @post = Post.find(params[:id])
     if current_user.id == @post.user_id.to_i
       @post.destroy
       render plain: "Post deleted.",
+>>>>>>> master
       status: :accepted
     else
       render json: { error: "Unable to delete post."},
       status: :unauthorized
     end
   end
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 end

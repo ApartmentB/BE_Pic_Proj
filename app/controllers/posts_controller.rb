@@ -30,10 +30,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
     if current_user.id == @post.user_id.to_i
       @post.destroy
-      render plain: "Post deleted.",
+      render json: { message: "Post deleted." },
       status: :accepted
     else
       render json: { error: "Unable to delete post."},
